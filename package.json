@@ -8,14 +8,15 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "python compile_stdlib.py",
+    "prepare": "npm run snyk-protect && python compile_stdlib.py",
     "prepublishOnly": "pandoc --from=rst --to=markdown_github README.rst -o README.md",
     "build": "node_modules/.bin/webpack --progress",
     "build:noCache": "DISABLE_WEBPACK_CACHE=true node_modules/.bin/webpack --progress",
     "watch": "node_modules/.bin/webpack --progress --watch",
     "serve": "node_modules/.bin/webpack-dev-server --inline --hot --port 3000",
     "lint": "node_modules/.bin/eslint batavia",
-    "python": "./run_in_batavia.js"
+    "python": "./run_in_batavia.js",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,8 @@
     "buffer": "5.0.0",
     "moment": "~> 2.19.3",
     "moment-timezone": "0.5.10",
-    "webpack": "2.2.1"
-  }
+    "webpack": "2.2.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
