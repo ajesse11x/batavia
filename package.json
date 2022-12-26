@@ -53,6 +53,6 @@
     "buffer": "5.0.0",
     "moment": "~> 2.19.3",
     "moment-timezone": "0.5.10",
-    "webpack": "2.2.1"
+    "webpack": "5.0.0"
   }
 }
